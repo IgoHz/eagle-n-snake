@@ -352,7 +352,7 @@ Prefer:
 * semantic HTML;
 * reusable React components;
 * TypeScript;
-* responsive Tailwind CSS;
+* responsive CSS;
 * optimized Next.js image handling where appropriate;
 * accessible interactions;
 * good performance;
@@ -365,6 +365,265 @@ Do not rewrite the entire project architecture unnecessarily.
 Do not add unnecessary libraries.
 
 Keep the implementation understandable and maintainable.
+
+## Responsive design and mobile art direction
+
+The supplied design currently contains a **desktop mockup only**.
+
+There are no finalized tablet or mobile mockups.
+
+Therefore, treat the desktop mockup as the **visual source of truth for the design language**, but use your own design judgment to create the tablet and mobile compositions.
+
+Do not simply scale the desktop layout down.
+
+The responsive versions should feel **intentionally designed for their respective viewport sizes**.
+
+---
+
+## Desktop
+
+The desktop implementation should follow the supplied mockup as closely as practical.
+
+Preserve:
+
+* composition;
+* visual hierarchy;
+* artwork positioning;
+* typography scale;
+* negative space;
+* section rhythm;
+* borders and decorative elements;
+* image treatment;
+* overall visual tension.
+
+Desktop is the primary reference.
+
+---
+
+## Tablet
+
+For tablet widths, intelligently reinterpret the desktop composition.
+
+Consider:
+
+* reducing the number of simultaneous visual elements;
+* changing multi-column compositions into narrower layouts;
+* repositioning the eagle/serpent artwork;
+* reducing decorative density;
+* adjusting typography proportions;
+* preserving intentional asymmetry where it still works;
+* increasing vertical rhythm where horizontal space becomes constrained.
+
+Do not blindly use the desktop breakpoints and shrink everything.
+
+---
+
+## Mobile
+
+Mobile should be treated as a **separate art-directed composition**, not a compressed desktop.
+
+The mobile experience should preserve the project's identity while adapting the visual hierarchy to a narrow viewport.
+
+Prioritize:
+
+1. eagle/serpent artwork;
+2. primary philosophical statement;
+3. typography;
+4. section rhythm;
+5. essential supporting imagery;
+6. secondary decorative elements.
+
+When space becomes constrained, **remove or simplify decorative elements rather than making everything tiny**.
+
+---
+
+## Mobile artwork composition
+
+The eagle/serpent should remain the dominant visual symbol.
+
+However, its composition may change substantially on mobile.
+
+For example:
+
+Desktop might use:
+
+```text
+┌───────────────────────────────────────┐
+│                                       │
+│   TEXT             EAGLE              │
+│                    +                  │
+│                   SNAKE               │
+│                                       │
+└───────────────────────────────────────┘
+```
+
+while mobile might intentionally become:
+
+```text
+┌──────────────────────┐
+│                      │
+│      BECOME          │
+│      WHO YOU         │
+│      ARE             │
+│                      │
+│       EAGLE          │
+│        🐍            │
+│                      │
+│       ↓              │
+│                      │
+└──────────────────────┘
+```
+
+The exact composition is up to you.
+
+The important requirement is that the mobile version should feel like a **designed poster/artifact in a vertical format**, rather than a desktop website squeezed into a phone.
+
+---
+
+## Responsive typography
+
+Typography should be deliberately recalibrated at smaller widths.
+
+Do not simply apply one global `transform: scale()` or aggressively shrink desktop font sizes.
+
+Consider:
+
+* different line breaks;
+* different max-widths;
+* reduced display sizes;
+* altered letter spacing;
+* different vertical spacing;
+* intentional text wrapping.
+
+Large philosophical statements should remain dramatic on mobile.
+
+Avoid situations where:
+
+* the headline becomes tiny;
+* artwork becomes unreadable;
+* text touches the viewport edges;
+* decorative elements overwhelm the content.
+
+---
+
+## Responsive decorative system
+
+The desktop design may contain many small graphic elements.
+
+On mobile:
+
+* preserve the strongest ones;
+* remove low-value decoration;
+* simplify dense compositions;
+* avoid visual clutter;
+* keep ornamental elements subordinate to the main artwork and typography.
+
+Do not remove the visual identity entirely just to make the page "clean."
+
+The mobile version should still unmistakably belong to the same visual system.
+
+---
+
+## Responsive interaction
+
+Any desktop interaction should have an appropriate mobile equivalent.
+
+Do not rely exclusively on:
+
+* hover;
+* mouse movement;
+* pointer parallax;
+* cursor-following effects.
+
+If an interaction has no meaningful mobile equivalent, gracefully reduce or remove it.
+
+Touch targets must remain comfortable.
+
+Respect:
+
+```css
+@media (prefers-reduced-motion: reduce)
+```
+
+and provide a reduced-motion experience.
+
+---
+
+## Breakpoints
+
+Do not assume that a particular framework's default breakpoints are automatically correct.
+
+Choose breakpoints based on where the composition actually needs to change.
+
+At minimum, validate:
+
+* large desktop;
+* standard desktop/laptop;
+* tablet;
+* large mobile;
+* small mobile.
+
+Use fluid sizing where appropriate and breakpoint-specific composition changes where necessary.
+
+---
+
+## Validation requirement
+
+After implementation, explicitly inspect the page at multiple viewport sizes.
+
+At minimum validate approximately:
+
+```text
+Desktop:
+1440 × 900
+
+Laptop:
+1280 × 800
+
+Tablet:
+768 × 1024
+
+Large mobile:
+390 × 844
+
+Small mobile:
+320 × 568
+```
+
+These are validation targets, not mandatory fixed dimensions.
+
+Check each viewport for:
+
+* composition;
+* typography;
+* artwork cropping;
+* overflow;
+* spacing;
+* section height;
+* navigation;
+* image quality;
+* touch interactions;
+* animation;
+* readability.
+
+Fix issues rather than accepting whatever the browser's natural responsive behavior produces.
+
+---
+
+## Mobile design freedom
+
+Because there is currently **no mobile reference mockup**, you are explicitly authorized to make reasonable design decisions for tablet and mobile.
+
+Use the supplied desktop design, assets and overall visual language as constraints.
+
+Within those constraints, optimize the mobile composition for:
+
+**visual impact + usability + readability + philosophical atmosphere.**
+
+Do not invent a completely different design language.
+
+The mobile version should look like the **same art-directed website reinterpreted for a smaller canvas**.
+
 
 ## Feature-Sliced Design architecture
 
