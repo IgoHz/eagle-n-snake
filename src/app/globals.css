@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050505;
+  --foreground: #dcd6cd;
+  --panel-bg: #070707;
+  --border-subtle: #1c1c1c;
+  --border-strong: #2c2c2c;
+  --accent-gold: #c8b99d;
+  --ink-bone: #e6e1da;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-panel: var(--panel-bg);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-cinzel: var(--font-cinzel);
+  --font-cormorant: var(--font-cormorant);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Custom ink inversion and blend filters */
+.ink-invert {
+  filter: invert(1) brightness(0.98) contrast(1.15);
+  mix-blend-mode: screen;
+}
+
+.ink-invert-heavy {
+  filter: invert(1) brightness(1.05) contrast(1.3);
+  mix-blend-mode: screen;
+}
+
+.mountain-invert {
+  filter: invert(1) brightness(0.92) contrast(1.25);
+  mix-blend-mode: screen;
+}
+
+.texture-blend {
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Custom blinking cursor */
+@keyframes blink-cursor {
+  0%, 45% {
+    opacity: 1;
+  }
+  50%, 95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-cursor-blink {
+  animation: blink-cursor 1.1s infinite;
+}
+
+/* Subtle atmospheric pulse */
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.012);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 12s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-cursor-blink {
+    animation: none;
+    opacity: 1;
+  }
+  .animate-subtle-pulse {
+    animation: none;
+  }
+}
+
+/* Custom subtle dark scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
 }
