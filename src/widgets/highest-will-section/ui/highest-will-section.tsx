@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { CornerCross } from "@/shared/ui/corner-cross";
-import { SigilStrip } from "@/shared/ui/sigil-glyph";
 import { GeometricAxis } from "@/shared/ui/geometric-axis";
 import { useMouseParallax } from "@/shared/lib/use-mouse-parallax";
 
@@ -27,7 +26,7 @@ export function HighestWillSection({ className = "" }: HighestWillSectionProps) 
       {/* Main Card Content */}
       <div className="relative flex-1 p-6 sm:p-7 md:p-8 flex flex-col justify-between">
         {/* Top Header Tag */}
-        <div className="flex items-center justify-between text-[#605d57] font-mono text-[11px] tracking-[0.25em] uppercase mb-4 sm:mb-6">
+        <div className="flex items-center justify-between text-[#605d57] font-mono text-[10px] sm:text-[11px] tracking-[0.2em] sm:tracking-[0.25em] uppercase mb-3 sm:mb-6">
           <span>{"//"} THE HIGHEST WILL</span>
           <span className="text-[10px] opacity-60">§ ASCENT</span>
         </div>
@@ -35,7 +34,7 @@ export function HighestWillSection({ className = "" }: HighestWillSectionProps) 
         {/* Content & Artwork Split */}
         <div className="grid grid-cols-12 gap-3 sm:gap-4 items-center flex-1 my-auto">
           {/* Left Poetry / Manifesto Block */}
-          <div className="col-span-6 sm:col-span-6 z-10 space-y-2 sm:space-y-3 font-mono text-[12px] sm:text-[13px] md:text-[14px] leading-relaxed tracking-[0.16em] uppercase text-[#dcd6cd]">
+          <div className="col-span-6 z-10 space-y-1.5 sm:space-y-3 font-mono text-[11px] sm:text-[13px] md:text-[14px] leading-relaxed tracking-[0.12em] sm:tracking-[0.16em] uppercase text-[#dcd6cd]">
             <p className="text-[#8e8a83]">NOT FOR THE HERD.</p>
             <p className="text-[#8e8a83]">NOT FOR THE PRAISE.</p>
             <p className="text-[#e6e1da] font-semibold">FOR THE HEIGHTS.</p>
@@ -44,10 +43,10 @@ export function HighestWillSection({ className = "" }: HighestWillSectionProps) 
           </div>
 
           {/* Right Mountain Eclipse Artwork */}
-          <div className="col-span-6 sm:col-span-6 relative h-full min-h-[220px] sm:min-h-[260px] flex items-center justify-center pointer-events-none">
+          <div className="col-span-6 relative h-full min-h-[190px] sm:min-h-[260px] flex items-center justify-center pointer-events-none">
             <GeometricAxis variant="mountain" />
             <div
-              className="relative w-full h-full max-h-[300px] flex items-center justify-center transition-transform duration-150 ease-out will-change-transform"
+              className="relative w-full h-full max-h-[240px] sm:max-h-[300px] flex items-center justify-center transition-transform duration-150 ease-out will-change-transform"
               style={{
                 transform: `translate3d(${parallax.x * 0.5}px, ${parallax.y * 0.5}px, 0)`,
               }}
@@ -63,9 +62,6 @@ export function HighestWillSection({ className = "" }: HighestWillSectionProps) 
           </div>
         </div>
       </div>
-
-      {/* Bottom Sigil Strip */}
-      <SigilStrip count={8} />
     </section>
   );
 }

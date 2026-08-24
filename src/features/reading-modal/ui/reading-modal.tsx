@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from "react";
 import { ZARATHUSTRA_READINGS } from "@/entities/philosophy";
 import { CornerCross } from "@/shared/ui/corner-cross";
 import { BracketButton } from "@/shared/ui/bracket-button";
-import { SigilGlyph } from "@/shared/ui/sigil-glyph";
 
 interface ReadingModalProps {
   isOpen: boolean;
@@ -85,19 +84,18 @@ export function ReadingModal({
         <CornerCross position="bottom-right" />
 
         {/* Modal Header */}
-        <div className="flex items-start justify-between border-b border-[#1c1c1c] pb-5 mb-6">
+        <div className="flex items-start justify-between border-b border-[#1c1c1c] pb-4 sm:pb-5 mb-5 sm:mb-6 gap-3">
           <div>
-            <div className="flex items-center gap-2 text-[#706c64] font-mono text-[11px] tracking-[0.25em] uppercase mb-1.5">
-              <SigilGlyph type="cross" size={12} />
+            <div className="flex items-center gap-1.5 sm:gap-2 text-[#706c64] font-mono text-[10px] sm:text-[11px] tracking-[0.2em] sm:tracking-[0.25em] uppercase mb-1 sm:mb-1.5">
               <span>ARCHIVAL EXCERPT // NIETZSCHE</span>
             </div>
             <h2
               id="reading-dialog-title"
-              className="font-mono text-base sm:text-lg text-white font-semibold tracking-[0.15em] uppercase"
+              className="font-mono text-sm sm:text-lg text-white font-semibold tracking-[0.12em] sm:tracking-[0.15em] uppercase"
             >
               {reading.title}
             </h2>
-            <p className="font-mono text-[12px] text-[#7e7a73] tracking-[0.1em] mt-0.5">
+            <p className="font-mono text-[10px] sm:text-[12px] text-[#7e7a73] tracking-[0.08em] sm:tracking-[0.1em] mt-0.5">
               {reading.subtitle} · {reading.source}
             </p>
           </div>
@@ -105,7 +103,7 @@ export function ReadingModal({
           <BracketButton
             onClick={onClose}
             variant="subtle"
-            className="text-[12px] -mt-2 -mr-2"
+            className="text-[10px] sm:text-[12px] shrink-0 -mt-1 -mr-1"
             aria-label="Close modal"
           >
             CLOSE
@@ -113,13 +111,13 @@ export function ReadingModal({
         </div>
 
         {/* Modal Content Sections */}
-        <div className="space-y-8 my-2">
+        <div className="space-y-6 sm:space-y-8 my-2">
           {reading.sections.map((sec, idx) => (
-            <div key={idx} className="space-y-3">
-              <h3 className="font-mono text-[13px] tracking-[0.2em] uppercase text-[#a39f97] border-l-2 border-[#555] pl-3">
+            <div key={idx} className="space-y-2 sm:space-y-3">
+              <h3 className="font-mono text-[11px] sm:text-[13px] tracking-[0.16em] sm:tracking-[0.2em] uppercase text-[#a39f97] border-l-2 border-[#555] pl-2.5 sm:pl-3">
                 {sec.heading}
               </h3>
-              <div className="space-y-3 pl-3 text-[#c4beb5] font-serif text-[15px] sm:text-[16px] leading-relaxed italic">
+              <div className="space-y-2 sm:space-y-3 pl-2.5 sm:pl-3 text-[#c4beb5] font-serif text-[14px] sm:text-[16px] leading-relaxed italic">
                 {sec.paragraphs.map((p, pIdx) => (
                   <p key={pIdx}>&ldquo;{p}&rdquo;</p>
                 ))}
@@ -129,9 +127,9 @@ export function ReadingModal({
         </div>
 
         {/* Modal Footer */}
-        <div className="mt-8 pt-5 border-t border-[#1c1c1c] flex items-center justify-between font-mono text-[11px] text-[#605d57] tracking-[0.2em]">
-          <span>FRIEDRICH NIETZSCHE // 1883</span>
-          <BracketButton onClick={onClose} variant="secondary">
+        <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-[#1c1c1c] flex items-center justify-between font-mono text-[9px] sm:text-[11px] text-[#605d57] tracking-[0.16em] sm:tracking-[0.2em]">
+          <span className="truncate mr-2">FRIEDRICH NIETZSCHE // 1883</span>
+          <BracketButton onClick={onClose} variant="secondary" className="shrink-0 text-[10px] sm:text-[11px]">
             DISMISS
           </BracketButton>
         </div>

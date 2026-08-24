@@ -22,15 +22,18 @@ export function BracketButton({
       "text-[#66635e] hover:text-[#dcd6cd]",
   }[variant];
 
+  const hasCustomDisplay = /(?:^|\s)(?:hidden|block|inline-block|flex|inline-flex|grid)/.test(className);
+  const baseDisplay = hasCustomDisplay ? "" : "inline-flex";
+
   return (
     <button
-      className={`group relative inline-flex items-center gap-1 font-mono text-[13px] tracking-[0.2em] uppercase py-2 px-3 transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-[#e6e1da] ${variantStyles} ${className}`}
+      className={`group relative ${baseDisplay} items-center gap-0.5 sm:gap-1 font-mono text-[11px] sm:text-[13px] tracking-[0.16em] sm:tracking-[0.2em] uppercase py-1.5 px-2 sm:py-2 sm:px-3 whitespace-nowrap transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-[#e6e1da] ${variantStyles} ${className}`}
       {...props}
     >
       <span className="text-[#55524d] group-hover:text-[#99948d] transition-colors duration-200">
         [
       </span>
-      <span className="px-1.5 transition-transform duration-200 group-hover:translate-x-0.5">
+      <span className="px-1 sm:px-1.5 transition-transform duration-200 group-hover:translate-x-0.5">
         {children}
       </span>
       <span className="text-[#55524d] group-hover:text-[#99948d] transition-colors duration-200">

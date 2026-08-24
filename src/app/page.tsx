@@ -37,7 +37,7 @@ export default function HomePage() {
       />
 
       {/* Main Board Framing Container */}
-      <main className="flex-1 w-full max-w-[1680px] mx-auto p-3 sm:p-4 md:p-6 lg:p-8 space-y-4 sm:space-y-6 md:space-y-8">
+      <main className="flex-1 w-full max-w-[1680px] mx-auto p-2.5 sm:p-4 md:p-6 lg:p-8 space-y-3 sm:space-y-6 md:space-y-8">
         {/* Primary 2-Column Editorial Grid (Exact Layout from Mockup) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 md:gap-6 items-stretch">
           {/* Left Hero Panel (60% Desktop Width) */}
@@ -53,11 +53,11 @@ export default function HomePage() {
             {/* Top Right: Thus Spoke Zarathustra */}
             <ZarathustraSection
               onOpenReading={handleOpenReading}
-              className="flex-1"
+              className="lg:flex-1"
             />
 
             {/* Bottom Right: The Highest Will */}
-            <HighestWillSection className="flex-1" />
+            <HighestWillSection className="lg:flex-1" />
           </div>
         </div>
 

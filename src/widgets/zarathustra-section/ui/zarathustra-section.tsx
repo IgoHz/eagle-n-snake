@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { CornerCross } from "@/shared/ui/corner-cross";
-import { SigilStrip } from "@/shared/ui/sigil-glyph";
 import { BracketButton } from "@/shared/ui/bracket-button";
 import { GeometricAxis } from "@/shared/ui/geometric-axis";
 import { useMouseParallax } from "@/shared/lib/use-mouse-parallax";
@@ -32,7 +31,7 @@ export function ZarathustraSection({
       {/* Main Card Content */}
       <div className="relative flex-1 p-6 sm:p-7 md:p-8 flex flex-col justify-between">
         {/* Top Header Tag */}
-        <div className="flex items-center justify-between text-[#605d57] font-mono text-[11px] tracking-[0.25em] uppercase mb-4 sm:mb-6">
+        <div className="flex items-center justify-between text-[#605d57] font-mono text-[10px] sm:text-[11px] tracking-[0.2em] sm:tracking-[0.25em] uppercase mb-3 sm:mb-6">
           <span>{"//"} THUS SPOKE ZARATHUSTRA</span>
           <span className="text-[10px] opacity-60">§ OVERMAN</span>
         </div>
@@ -40,17 +39,17 @@ export function ZarathustraSection({
         {/* Content & Artwork Split */}
         <div className="grid grid-cols-12 gap-3 sm:gap-4 items-center flex-1 my-auto">
           {/* Left Text Block */}
-          <div className="col-span-7 sm:col-span-7 z-10 flex flex-col justify-between space-y-4 sm:space-y-6">
+          <div className="col-span-7 z-10 flex flex-col justify-between space-y-3 sm:space-y-6">
             <div>
-              <h2 className="font-mono text-xl sm:text-2xl lg:text-[26px] font-bold tracking-[0.14em] leading-tight text-white uppercase">
+              <h2 className="font-mono text-lg sm:text-2xl lg:text-[26px] font-bold tracking-[0.12em] sm:tracking-[0.14em] leading-tight text-white uppercase">
                 THUS SPOKE
                 <br />
                 ZARATHUSTRA.
               </h2>
-              <div className="w-6 h-[1px] bg-[#55524d] my-3 sm:my-4" />
+              <div className="w-6 h-[1px] bg-[#55524d] my-2 sm:my-4" />
             </div>
 
-            <div className="font-serif text-[14px] sm:text-[15px] md:text-[16px] text-[#c4beb5] leading-relaxed italic space-y-1">
+            <div className="font-serif text-[13px] sm:text-[15px] md:text-[16px] text-[#c4beb5] leading-snug sm:leading-relaxed italic space-y-0.5 sm:space-y-1">
               <p>I teach you</p>
               <p>the Overman.</p>
               <p>Man is something</p>
@@ -58,12 +57,13 @@ export function ZarathustraSection({
               <p>overcome.</p>
             </div>
 
-            <div className="w-6 h-[1px] bg-[#55524d] my-2" />
+            <div className="w-6 h-[1px] bg-[#55524d] my-1 sm:my-2" />
 
             <div>
               <BracketButton
                 onClick={() => onOpenReading("overman")}
                 aria-label="Read Zarathustra Overman excerpt"
+                className="text-[10px] sm:text-[12px]"
               >
                 READ
               </BracketButton>
@@ -71,10 +71,10 @@ export function ZarathustraSection({
           </div>
 
           {/* Right Vertical Creature Artwork */}
-          <div className="col-span-5 sm:col-span-5 relative h-full min-h-[220px] sm:min-h-[260px] flex items-center justify-center pointer-events-none">
+          <div className="col-span-5 relative h-full min-h-[200px] sm:min-h-[260px] flex items-center justify-center pointer-events-none">
             <GeometricAxis variant="vertical" />
             <div
-              className="relative w-full h-full max-h-[300px] flex items-center justify-center transition-transform duration-150 ease-out will-change-transform"
+              className="relative w-full h-full max-h-[240px] sm:max-h-[300px] flex items-center justify-center transition-transform duration-150 ease-out will-change-transform"
               style={{
                 transform: `translate3d(${parallax.x * 0.7}px, ${parallax.y * 0.7}px, 0)`,
               }}
@@ -90,9 +90,6 @@ export function ZarathustraSection({
           </div>
         </div>
       </div>
-
-      {/* Bottom Sigil Strip */}
-      <SigilStrip count={8} />
     </section>
   );
 }
