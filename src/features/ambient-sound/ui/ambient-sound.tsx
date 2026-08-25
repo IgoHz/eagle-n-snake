@@ -20,7 +20,7 @@ export function AmbientSoundToggle({ className = "" }: AmbientSoundToggleProps) 
         aria-label="Toggle ambient atmospheric drone"
         className="text-[10px] sm:text-[11px] tracking-[0.16em] sm:tracking-[0.2em]"
       >
-        <span className="flex items-center gap-1.5">
+        <span className="flex items-center gap-2 md:gap-3">
           <span
             className={`inline-block w-1.5 h-1.5 rounded-full shrink-0 ${
               isPlaying ? "bg-[#dcd6cd] animate-ping" : "bg-[#4a4742]"
