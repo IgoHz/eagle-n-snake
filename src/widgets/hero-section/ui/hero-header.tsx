@@ -57,7 +57,7 @@ export function HeroHeader({
 
   const quoteBlock = (
     <div className={`space-y-2 sm:space-y-3 max-w-sm ${translucentCardStyle}`}>
-      <div className="flex items-center gap-2 text-[#757169] font-mono text-[10px] sm:text-[11px] tracking-[0.22em] sm:tracking-[0.25em] uppercase">
+      <div className="flex items-center gap-2 text-[#757169] font-mono text-[10px] sm:text-[11px] tracking-[0.22em] sm:tracking-[0.25em] uppercase whitespace-nowrap">
         <span>{"//"} PHILOSOPHY</span>
         <span className="text-[10px] opacity-60">[{activePath.number}]</span>
       </div>

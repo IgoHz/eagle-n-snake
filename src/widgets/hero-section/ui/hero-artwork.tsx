@@ -14,7 +14,7 @@ export function HeroArtwork({ className = "" }: HeroArtworkProps) {
 
   return (
     <div
-      className={`relative w-full h-full min-h-[260px] sm:min-h-[320px] md:min-h-[520px] lg:min-h-[720px] flex items-center justify-center overflow-hidden select-none pointer-events-none ${className}`}
+      className={`relative w-full h-full min-h-0 md:min-h-[520px] lg:min-h-[720px] flex items-center justify-center overflow-hidden select-none pointer-events-none ${className}`}
       aria-hidden="true"
     >
       {/* Background Geometric Axis & Celestial Radiance */}
@@ -27,7 +27,7 @@ export function HeroArtwork({ className = "" }: HeroArtworkProps) {
           transform: `translate3d(${parallax.x}px, ${parallax.y}px, 0)`,
         }}
       >
-        <div className="relative w-[88%] sm:w-[82%] md:w-[90%] max-w-[300px] sm:max-w-[380px] md:max-w-[460px] lg:max-w-[620px] aspect-[7/10] sm:aspect-[3/4]">
+        <div className="relative w-auto h-full max-w-[300px] sm:max-w-[380px] md:w-[90%] md:max-w-[460px] lg:max-w-[620px] aspect-[7/10] sm:aspect-[3/4]">
           <Image
             src="/assets/creature/hero-eagle-n-snake.png"
             alt="Friedrich Nietzsche's Eagle and Serpent Creature"
