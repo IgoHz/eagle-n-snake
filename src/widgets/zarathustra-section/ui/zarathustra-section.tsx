@@ -71,7 +71,7 @@ export function ZarathustraSection({
           </div>
 
           {/* Right Vertical Creature Artwork */}
-          <div className="col-span-5 relative h-full min-h-[200px] sm:min-h-[260px] flex items-center justify-center pointer-events-none">
+          <div className="col-span-5 relative h-full min-h-[200px] sm:min-h-[260px] flex items-center justify-center pointer-events-none py-1">
             <GeometricAxis variant="vertical" />
             <div
               className="relative w-full h-full max-h-[240px] sm:max-h-[300px] flex items-center justify-center transition-transform duration-150 ease-out will-change-transform"
