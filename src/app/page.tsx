@@ -7,6 +7,7 @@ import { ZarathustraSection } from "@/widgets/zarathustra-section";
 import { HighestWillSection } from "@/widgets/highest-will-section";
 import { SigilExplorer } from "@/widgets/sigil-explorer";
 import { SiteFooter } from "@/widgets/site-footer";
+import { AuthorSignature } from "@/widgets/author-signature";
 import { ReadingModal } from "@/features/reading-modal";
 import { TextureOverlay } from "@/shared/ui/texture-overlay";
 
@@ -70,6 +71,9 @@ export default function HomePage() {
 
         {/* Site Footer */}
         <SiteFooter />
+
+        {/* Author Signature & Colophon */}
+        <AuthorSignature />
       </main>
 
       {/* Archival Reading Modal */}
