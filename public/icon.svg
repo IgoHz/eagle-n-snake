@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" fill="#050505" rx="80"/>
+  <!-- Subtle border outline -->
+  <rect x="16" y="16" width="480" height="480" fill="none" stroke="#1f1f1f" stroke-width="6" rx="68"/>
+  
+  <g transform="translate(256, 256)">
+    <!-- Geometric Radial Crosshairs / Occult Axis Marks -->
+    <line x1="0" y1="-232" x2="0" y2="-200" stroke="#7a7772" stroke-width="4" stroke-linecap="square"/>
+    <line x1="0" y1="200" x2="0" y2="232" stroke="#7a7772" stroke-width="4" stroke-linecap="square"/>
+    <line x1="-232" y1="0" x2="-200" y2="0" stroke="#7a7772" stroke-width="4" stroke-linecap="square"/>
+    <line x1="200" y1="0" x2="232" y2="0" stroke="#7a7772" stroke-width="4" stroke-linecap="square"/>
+
+    <!-- Sharp Diamond Halo / Radiant Apex -->
+    <polygon points="0,-218 16,-180 0,-190 -16,-180" fill="#e6e1da"/>
+    
+    <!-- Eagle Wings (Aggressive, Dagger-like Plumes) -->
+    <!-- Left Wing -->
+    <path d="M-15,-60 L-75,-175 L-48,-100 L-125,-155 L-82,-75 L-175,-118 L-115,-45 L-205,-78 L-135,-15 L-185,22 L-105,15 L-150,72 L-85,45 L-115,122 L-52,70 L-42,112 L-20,60 Z" fill="#dcd6cd"/>
+    
+    <!-- Right Wing -->
+    <path d="M15,-60 L75,-175 L48,-100 L125,-155 L82,-75 L175,-118 L115,-45 L205,-78 L135,-15 L185,22 L105,15 L150,72 L85,45 L115,122 L52,70 L42,112 L20,60 Z" fill="#dcd6cd"/>
+
+    <!-- Eagle Crown & Sharp Hooked Beak (Facing Apex) -->
+    <path d="M0,-170 C-26,-170 -42,-142 -42,-110 C-42,-85 -20,-70 0,-60 C20,-70 42,-85 42,-110 C42,-142 26,-170 0,-170 Z" fill="#050505"/>
+    <path d="M-32,-148 L0,-190 L32,-148 L20,-115 L48,-120 L16,-85 L0,-65 L-16,-85 L-48,-120 L-20,-115 Z" fill="#e6e1da"/>
+    <!-- Razor Hooked Beak -->
+    <path d="M-6,-118 L12,-118 L28,-100 L18,-95 L8,-98 L0,-82 L-8,-98 L-18,-95 L-28,-100 L-12,-118 Z" fill="#050505"/>
+    <path d="M0,-152 L12,-125 L0,-102 L-12,-125 Z" fill="#dcd6cd"/>
+
+    <!-- Intertwined Serpent Body (Coiling upward through the eagle) -->
+    <!-- Serpent Hood & Coils -->
+    <path d="M0,-35 C-65,-35 -90,15 -80,62 C-70,105 -22,118 0,138 C22,118 70,105 80,62 C90,15 65,-35 0,-35 Z" fill="#050505" stroke="#dcd6cd" stroke-width="14" stroke-linejoin="miter"/>
+    
+    <!-- Inner Serpent Coil Ring (Ouroboric Void) -->
+    <path d="M0,0 C-36,0 -52,25 -46,55 C-40,82 -16,98 0,108 C16,98 40,82 46,55 C52,25 36,0 0,0 Z" fill="#050505"/>
+    
+    <!-- Serpent Spine / Ribs (Sharp aggressive Chevron ribs) -->
+    <path d="M-26,25 L0,42 L26,25 L20,36 L0,52 L-20,36 Z" fill="#e6e1da"/>
+    <path d="M-30,55 L0,72 L30,55 L24,66 L0,82 L-24,66 Z" fill="#e6e1da"/>
+    <path d="M-24,85 L0,100 L24,85 L18,96 L0,110 L-18,96 Z" fill="#e6e1da"/>
+
+    <!-- Serpent Head (Emerging at bottom / biting upward) -->
+    <path d="M0,138 L-28,180 L-14,190 L-32,222 L0,200 L32,222 L14,190 L28,180 Z" fill="#e6e1da"/>
+    <!-- Serpent Eyes & Split Venom Fang -->
+    <polygon points="-14,180 -7,175 -9,186" fill="#050505"/>
+    <polygon points="14,180 7,175 9,186" fill="#050505"/>
+    <polygon points="0,195 -6,232 -2,232 0,210 2,232 6,232" fill="#e6e1da"/>
+    
+    <!-- Central Solar Spark -->
+    <polygon points="0,-12 5,-4 14,0 5,4 0,12 -5,4 -14,0 -5,-4" fill="#e6e1da"/>
+  </g>
+</svg>
