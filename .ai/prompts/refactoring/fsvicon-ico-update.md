@@ -1,0 +1,1 @@
+I would like to update favicon ico design.

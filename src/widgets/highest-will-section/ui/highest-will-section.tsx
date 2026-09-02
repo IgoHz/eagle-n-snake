@@ -11,10 +11,11 @@ interface HighestWillSectionProps {
 }
 
 export function HighestWillSection({ className = "" }: HighestWillSectionProps) {
-  const parallax = useMouseParallax(0.012);
+  const containerRef = useMouseParallax<HTMLDivElement>();
 
   return (
     <section
+      ref={containerRef}
       aria-label="The Highest Will"
       className={`relative flex flex-col justify-between bg-[#070707] border border-[#1c1c1c] overflow-hidden ${className}`}
     >
@@ -43,12 +44,24 @@ export function HighestWillSection({ className = "" }: HighestWillSectionProps) 
           </div>
 
           {/* Right Mountain Eclipse Artwork */}
-          <div className="col-span-5 relative h-full min-h-[200px] sm:min-h-[260px] flex items-center justify-center pointer-events-none py-1">
-            <GeometricAxis variant="mountain" />
+          <div className="col-span-5 relative h-full min-h-[200px] sm:min-h-[260px] flex items-center justify-center pointer-events-none py-1 overflow-hidden [perspective:800px]">
+            {/* Background Mountain Axis (subtle counter-shift & tilt) */}
             <div
-              className="relative w-full h-full max-h-[220px] sm:max-h-[270px] flex items-center justify-center transition-transform duration-150 ease-out will-change-transform"
+              className="absolute inset-0 flex items-center justify-center will-change-transform pointer-events-none"
               style={{
-                transform: `translate3d(${parallax.x * 0.5}px, ${parallax.y * 0.5}px, 0)`,
+                transform:
+                  "translate3d(calc(var(--mouse-x, 0) * -2px), calc(var(--mouse-y, 0) * -2px), 0) rotateX(calc(var(--mouse-y, 0) * 1deg)) rotateY(calc(var(--mouse-x, 0) * -1deg))",
+              }}
+            >
+              <GeometricAxis variant="mountain" />
+            </div>
+
+            {/* Mountain Artwork */}
+            <div
+              className="relative w-full h-full max-h-[220px] sm:max-h-[270px] flex items-center justify-center will-change-transform"
+              style={{
+                transform:
+                  "translate3d(calc(var(--mouse-x, 0) * 6px), calc(var(--mouse-y, 0) * 6px), 0) rotateX(calc(var(--mouse-y, 0) * -3deg)) rotateY(calc(var(--mouse-x, 0) * 3deg))",
               }}
             >
               <Image

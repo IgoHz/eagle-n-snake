@@ -10,21 +10,32 @@ interface HeroArtworkProps {
 }
 
 export function HeroArtwork({ className = "" }: HeroArtworkProps) {
-  const parallax = useMouseParallax(0.015);
+  const containerRef = useMouseParallax<HTMLDivElement>();
 
   return (
     <div
-      className={`relative w-full h-full min-h-0 md:min-h-[520px] lg:min-h-[720px] flex items-center justify-center overflow-hidden select-none pointer-events-none ${className}`}
+      ref={containerRef}
+      className={`relative w-full h-full min-h-0 md:min-h-[520px] lg:min-h-[720px] flex items-center justify-center overflow-hidden select-none pointer-events-none [perspective:1000px] ${className}`}
       aria-hidden="true"
     >
-      {/* Background Geometric Axis & Celestial Radiance */}
-      <GeometricAxis variant="hero" />
-
-      {/* Main Eagle & Serpent Inverted High-Res Creature */}
+      {/* Background Geometric Axis & Celestial Radiance (subtle counter depth) */}
       <div
-        className="relative z-10 w-full h-full flex items-center justify-center transition-transform duration-100 ease-out will-change-transform"
+        className="absolute inset-0 flex items-center justify-center will-change-transform pointer-events-none"
         style={{
-          transform: `translate3d(${parallax.x}px, ${parallax.y}px, 0)`,
+          transform:
+            "translate3d(calc(var(--mouse-x, 0) * -3px), calc(var(--mouse-y, 0) * -3px), 0) rotateX(calc(var(--mouse-y, 0) * 1.5deg)) rotateY(calc(var(--mouse-x, 0) * -1.5deg))",
+        }}
+      >
+        <GeometricAxis variant="hero" />
+      </div>
+
+      {/* Main Eagle & Serpent Inverted High-Res Creature (subtle 3D angle + restrained shift) */}
+      <div
+        className="relative z-10 w-full h-full flex items-center justify-center will-change-transform"
+        style={{
+          transform:
+            "translate3d(calc(var(--mouse-x, 0) * 9px), calc(var(--mouse-y, 0) * 9px), 0) rotateX(calc(var(--mouse-y, 0) * -4deg)) rotateY(calc(var(--mouse-x, 0) * 4deg))",
+          transformStyle: "preserve-3d",
         }}
       >
         <div className="relative w-auto h-full max-w-[300px] sm:max-w-[380px] md:w-[90%] md:max-w-[460px] lg:max-w-[620px] aspect-[7/10] sm:aspect-[3/4]">

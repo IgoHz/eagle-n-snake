@@ -16,10 +16,11 @@ export function ZarathustraSection({
   onOpenReading,
   className = "",
 }: ZarathustraSectionProps) {
-  const parallax = useMouseParallax(0.01);
+  const containerRef = useMouseParallax<HTMLDivElement>();
 
   return (
     <section
+      ref={containerRef}
       aria-label="Thus Spoke Zarathustra"
       className={`relative flex flex-col justify-between bg-[#070707] border border-[#1c1c1c] overflow-hidden ${className}`}
     >
@@ -71,12 +72,24 @@ export function ZarathustraSection({
           </div>
 
           {/* Right Vertical Creature Artwork */}
-          <div className="col-span-5 relative h-full min-h-[200px] sm:min-h-[260px] flex items-center justify-center pointer-events-none py-1">
-            <GeometricAxis variant="vertical" />
+          <div className="col-span-5 relative h-full min-h-[200px] sm:min-h-[260px] flex items-center justify-center pointer-events-none py-1 overflow-hidden [perspective:800px]">
+            {/* Background Vertical Axis (subtle counter-shift & tilt) */}
             <div
-              className="relative w-full h-full max-h-[240px] sm:max-h-[300px] flex items-center justify-center transition-transform duration-150 ease-out will-change-transform"
+              className="absolute inset-0 flex items-center justify-center will-change-transform pointer-events-none"
               style={{
-                transform: `translate3d(${parallax.x * 0.7}px, ${parallax.y * 0.7}px, 0)`,
+                transform:
+                  "translate3d(calc(var(--mouse-x, 0) * -2px), calc(var(--mouse-y, 0) * -2px), 0) rotateX(calc(var(--mouse-y, 0) * 1deg)) rotateY(calc(var(--mouse-x, 0) * -1deg))",
+              }}
+            >
+              <GeometricAxis variant="vertical" />
+            </div>
+
+            {/* Vertical Creature Artwork */}
+            <div
+              className="relative w-full h-full max-h-[240px] sm:max-h-[300px] flex items-center justify-center will-change-transform"
+              style={{
+                transform:
+                  "translate3d(calc(var(--mouse-x, 0) * 7px), calc(var(--mouse-y, 0) * 7px), 0) rotateX(calc(var(--mouse-y, 0) * -3.5deg)) rotateY(calc(var(--mouse-x, 0) * 3.5deg))",
               }}
             >
               <Image
