@@ -45,12 +45,12 @@ export function HighestWillSection({ className = "" }: HighestWillSectionProps) 
 
           {/* Right Mountain Eclipse Artwork */}
           <div className="col-span-5 relative h-full min-h-[200px] sm:min-h-[260px] flex items-center justify-center pointer-events-none py-1 overflow-hidden [perspective:800px]">
-            {/* Background Mountain Axis (subtle counter-shift & tilt) */}
+            {/* Background Mountain Axis (ultra-subtle counter-shift & tilt) */}
             <div
               className="absolute inset-0 flex items-center justify-center will-change-transform pointer-events-none"
               style={{
                 transform:
-                  "translate3d(calc(var(--mouse-x, 0) * -2px), calc(var(--mouse-y, 0) * -2px), 0) rotateX(calc(var(--mouse-y, 0) * 1deg)) rotateY(calc(var(--mouse-x, 0) * -1deg))",
+                  "translate3d(calc(var(--mouse-x, 0) * -1px), calc(var(--mouse-y, 0) * -1px), 0) rotateX(calc(var(--mouse-y, 0) * 0.5deg)) rotateY(calc(var(--mouse-x, 0) * -0.5deg))",
               }}
             >
               <GeometricAxis variant="mountain" />
@@ -61,7 +61,7 @@ export function HighestWillSection({ className = "" }: HighestWillSectionProps) 
               className="relative w-full h-full max-h-[220px] sm:max-h-[270px] flex items-center justify-center will-change-transform"
               style={{
                 transform:
-                  "translate3d(calc(var(--mouse-x, 0) * 6px), calc(var(--mouse-y, 0) * 6px), 0) rotateX(calc(var(--mouse-y, 0) * -3deg)) rotateY(calc(var(--mouse-x, 0) * 3deg))",
+                  "translate3d(calc(var(--mouse-x, 0) * 3px), calc(var(--mouse-y, 0) * 3px), 0) rotateX(calc(var(--mouse-y, 0) * -1.5deg)) rotateY(calc(var(--mouse-x, 0) * 1.5deg))",
               }}
             >
               <Image
