@@ -5,6 +5,7 @@ import Image from "next/image";
 import { CornerCross } from "@/shared/ui/corner-cross";
 import { SIGIL_ITEMS, SigilItem } from "@/entities/sigil";
 import { BracketButton } from "@/shared/ui/bracket-button";
+import { useMouseParallax } from "@/shared/lib/use-mouse-parallax";
 
 interface SigilExplorerProps {
   className?: string;
@@ -12,9 +13,11 @@ interface SigilExplorerProps {
 
 export function SigilExplorer({ className = "" }: SigilExplorerProps) {
   const [selectedSigil, setSelectedSigil] = useState<SigilItem | null>(null);
+  const containerRef = useMouseParallax<HTMLDivElement>();
 
   return (
     <section
+      ref={containerRef}
       aria-label="Sigil Explorations"
       className={`relative bg-[#070707] border border-[#1c1c1c] overflow-hidden ${className}`}
     >
@@ -60,15 +63,23 @@ export function SigilExplorer({ className = "" }: SigilExplorerProps) {
                 </span>
               </div>
 
-              {/* Artwork Graphic */}
-              <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 my-2 sm:my-3 flex items-center justify-center pointer-events-none">
-                <Image
-                  src={sigil.imageSrc}
-                  alt={sigil.name}
-                  fill
-                  sizes="140px"
-                  className="object-contain ink-invert group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(220,214,205,0.05)]"
-                />
+              {/* Artwork Graphic with subtle 3D parallax */}
+              <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 my-2 sm:my-3 flex items-center justify-center pointer-events-none [perspective:600px]">
+                <div
+                  className="relative w-full h-full flex items-center justify-center will-change-transform"
+                  style={{
+                    transform:
+                      "translate3d(calc(var(--mouse-x, 0) * 3px), calc(var(--mouse-y, 0) * 3px), 0) rotateX(calc(var(--mouse-y, 0) * -1.5deg)) rotateY(calc(var(--mouse-x, 0) * 1.5deg))",
+                  }}
+                >
+                  <Image
+                    src={sigil.imageSrc}
+                    alt={sigil.name}
+                    fill
+                    sizes="140px"
+                    className="object-contain ink-invert group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(220,214,205,0.05)]"
+                  />
+                </div>
               </div>
 
               {/* Bottom Details */}
