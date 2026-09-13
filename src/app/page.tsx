@@ -39,27 +39,24 @@ export default function HomePage() {
 
       {/* Main Board Framing Container */}
       <main className="flex-1 w-full max-w-[1680px] mx-auto p-2.5 sm:p-4 md:p-6 lg:p-8 space-y-3 sm:space-y-6 md:space-y-8">
-        {/* Primary 2-Column Editorial Grid (Exact Layout from Mockup) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 md:gap-6 items-stretch">
-          {/* Left Hero Panel (60% Desktop Width) */}
-          <div className="lg:col-span-7 flex flex-col">
-            <HeroSection
-              onOpenReading={handleOpenReading}
-              className="flex-1"
-            />
-          </div>
+        {/* Primary 2-Column Editorial Grid (Content-Driven Grid) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-[auto_auto] gap-3 sm:gap-4 md:gap-6 items-stretch">
+          {/* Left Hero Panel (Spans both rows on Desktop) */}
+          <HeroSection
+            onOpenReading={handleOpenReading}
+            className="lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:row-span-2 min-h-0"
+          />
 
-          {/* Right Panels Stack (40% Desktop Width) */}
-          <div className="lg:col-span-5 flex flex-col gap-3 sm:gap-4 md:gap-6 justify-between">
-            {/* Top Right: Thus Spoke Zarathustra */}
-            <ZarathustraSection
-              onOpenReading={handleOpenReading}
-              className="lg:flex-1"
-            />
+          {/* Top Right: Thus Spoke Zarathustra */}
+          <ZarathustraSection
+            onOpenReading={handleOpenReading}
+            className="lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:row-span-1 min-h-0"
+          />
 
-            {/* Bottom Right: The Highest Will */}
-            <HighestWillSection className="lg:flex-1" />
-          </div>
+          {/* Bottom Right: The Highest Will */}
+          <HighestWillSection
+            className="lg:col-span-5 lg:col-start-8 lg:row-start-2 lg:row-span-1 min-h-0"
+          />
         </div>
 
         {/* Sigil Explorations Section (Mockup Details Section) */}

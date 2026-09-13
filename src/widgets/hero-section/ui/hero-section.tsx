@@ -49,7 +49,7 @@ export function HeroSection({ onOpenReading, className = "" }: HeroSectionProps)
       </div>
 
       {/* Tablet & Desktop 2-Column Grid (md+) */}
-      <div className="hidden md:grid relative flex-1 grid-cols-12 md:min-h-[580px] lg:min-h-[740px] items-stretch">
+      <div className="hidden md:grid relative flex-1 grid-cols-12 md:min-h-[580px] lg:min-h-0 items-stretch">
         {/* editorial cross */}
         <CornerCross position="top-left" />
         <CornerCross position="top-right" />

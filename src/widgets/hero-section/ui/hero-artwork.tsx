@@ -15,7 +15,7 @@ export function HeroArtwork({ className = "" }: HeroArtworkProps) {
   return (
     <div
       ref={containerRef}
-      className={`relative w-full h-full min-h-0 md:min-h-[520px] lg:min-h-[720px] flex items-center justify-center overflow-hidden select-none pointer-events-none [perspective:1000px] ${className}`}
+      className={`relative w-full h-full min-h-0 md:min-h-[520px] lg:min-h-0 flex items-center justify-center overflow-hidden select-none pointer-events-none [perspective:1000px] ${className}`}
       aria-hidden="true"
     >
       {/* Background Geometric Axis & Celestial Radiance (subtle counter depth) */}
